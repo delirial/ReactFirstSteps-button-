@@ -7,7 +7,7 @@ import Button from './components/Button';
 ReactDOM.render(
 	<div>
 		<Hello name="World" />
-		<Button name="Contador:" />
+		<Button name="Eric:" />
 	</div>,
 	document.getElementById('app')
 );

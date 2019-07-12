@@ -10,6 +10,15 @@ export interface ButtonStates {
 }
 
 export default class Button extends React.Component<ButtonProps, ButtonStates> {
+	constructor(props) {
+		super(props);
+		this.state = {
+			numberOfClicks: 0
+		};
+
+		this.incrementCount = this.incrementCount.bind(this);
+	}
+
 	incrementCount() {
 		this.setState({
 			numberOfClicks: this.state.numberOfClicks + 1
@@ -19,14 +28,10 @@ export default class Button extends React.Component<ButtonProps, ButtonStates> {
 	render() {
 		return (
 			<div>
-				<button onClick={this.incrementCount.bind(this)}>{this.state.numberOfClicks}</button>
+				<button onClick={this.incrementCount}>
+					{this.props.name} {this.state.numberOfClicks}
+				</button>
 			</div>
 		);
-	}
-	constructor(props) {
-		super(props);
-		this.state = {
-			numberOfClicks: 0
-		};
 	}
 }
