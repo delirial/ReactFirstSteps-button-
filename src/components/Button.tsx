@@ -19,11 +19,7 @@ export default class Button extends React.Component<ButtonProps, ButtonStates> {
 	render() {
 		return (
 			<div>
-				<button onClick={this.incrementCount}>
-					{' '}
-					{this.props.name}
-					{this.state.numberOfClicks}{' '}
-				</button>
+				<button onClick={this.incrementCount.bind(this)}>{this.state.numberOfClicks}</button>
 			</div>
 		);
 	}
